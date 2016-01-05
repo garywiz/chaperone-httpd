@@ -26,11 +26,10 @@ RUN rm -rf /tmp/* /var/tmp/*
 
 # User apache
 RUN chown -R apache:apache /var/log /etc/httpd
-RUN chmod 755 -R /etc/httpd /var/www
 EXPOSE 80
 
 # Chaperone start
-ENV _CHAP_OPTIONS --config /etc/httpd/
+#ENV _CHAP_OPTIONS  
 ENTRYPOINT ["/usr/bin/chaperone"]
 
 # Run as user
