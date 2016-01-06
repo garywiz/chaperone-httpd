@@ -6,7 +6,6 @@ MAINTAINER eduardz
 RUN yum install httpd -y
 
 # Chaperone install #
-# Install Python
 RUN yum -y install epel-release
 RUN yum -y install python34
 RUN curl -s "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
