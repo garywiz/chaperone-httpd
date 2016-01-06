@@ -1,7 +1,8 @@
 FROM centos:latest
+
 MAINTAINER eduardz
 
-# test apache run
+# Install apache
 RUN yum install httpd -y
 
 # Chaperone install #
@@ -20,17 +21,16 @@ RUN pip3 install chaperone
 RUN mkdir -p /etc/chaperone.d
 COPY chaperone.conf /etc/chaperone.d/chaperone.conf
 
-# Clean image
+# Clean docker image
 RUN yum clean all
 RUN rm -rf /tmp/* /var/tmp/*
 
-# User apache
+# Apache
 RUN chown -R apache:apache /var/log /etc/httpd
 EXPOSE 80
 
 # Chaperone start
-#ENV _CHAP_OPTIONS  
 ENTRYPOINT ["/usr/bin/chaperone"]
 
 # Run as user
-USER apache
+#USER apache ---under work
