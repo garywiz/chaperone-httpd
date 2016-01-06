@@ -1,6 +1,6 @@
 # docker.apache
 Apache server running on CentOS 7 image;
-Apache server started by Chaperone with user='apache'
+Apache server started by Chaperone with user=root (not yet user 'apache')
 
 Example start a docker container from docker image
  
